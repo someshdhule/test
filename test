@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome!</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #ff7e5f, #feb47b, #ffed8e); /* Vibrant gradient colors */
+    }
+    
+    .popup {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animation for greeting */
+    .greeting {
+        font-size: 36px;
+        font-weight: bold;
+        color: #ff7e5f; /* Match with the gradient color */
+        animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+
+    /* Button styles */
+    .button {
+        background-color: #ff7e5f;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #ff6c4e;
+    }
+</style>
+</head>
+<body>
+<div class="popup">
+    <h1 class="greeting">Hello!</h1>
+    <button class="button" onclick="displayMessage()">Click me!</button>
+    <p id="message" style="display: none; margin-top: 20px;">You've been Hacked!</p>
+</div>
+
+<script>
+    function displayMessage() {
+        document.getElementById("message").style.display = "block";
+    }
+</script>
+</body>
+</html>
